@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		#ball{
+			height: 300px;
+			width: 300px;
+			background-image: url(https://www.premierleague.com/resources/prod/v6.105.3-4618/i/nike-ball-hub/index/22.png);
+			background-size: contain;
+			position: absolute;
+		}
+
+
+
+
+	</style>
+
+	
+</head>
+<body>
+
+
+<div id="ball"></div>
+
+<script type="text/javascript">
+	document.addEventListener("click", function makeDiv(event){
+
+console.log(event.clientX, event.clientY)
+
+ball.style.left = event.clientX - 150 +"px";
+ball.style.top = event.clientY - 150 +"px";
+
+})
+
+
+</script>
+
+
+
+</body>
+</html>
