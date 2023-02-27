@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <style>
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body onclick="addSquare()">
+    <script>
+      function addSquare() {
+        var square = document.createElement("div");
+        square.className = "square";
+        document.body.appendChild(square);
+      }
+    </script>
+  </body>
+</html>

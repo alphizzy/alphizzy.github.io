@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <style>
+      #heart {
+        width: 620px;
+        height: 350px;
+/*        background-color: pink;
+*/        background-image: url(heart.png);
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        padding-top: 150px;
+        font-size: 40px;
+        background-color: light blue;
+        z-index: 2;
+        position: relative;
+        top: 0px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+
+      .pictures{
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+        opacity: 0;
+        background-size: contain;
+        background-repeat:  no-repeat;
+        display: inline-block;
+      }
+
+      #pic1{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);
+
+      }
+     
+     #pic2{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);
+
+      }
+
+    #pic3{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);  
+       }     
+    #pic4{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);  
+          }
+    #pic5{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);  
+          }
+    #pic6{
+            background-image: url(https://bbk12e1-cdn.myschoolcdn.com/ftpimages/98/news/large_news1151658_1097055.jpg);  
+          }
+    </style>
+  </head>
+  <body>
+
+    <div class="button" id="button">press this for a suprise then press the middle of the screen</div>
+    <center><div id="heart"></div></center>
+    <div id="pic1" class="pictures"></div>
+      <div id="pic2" class="pictures"></div>
+    <div id="pic3" class="pictures"></div>
+
+        
+    <script>
+       button.addEventListener("click", function(){
+        
+       	heart.style.opacity ="1";
+       	button.style.opacity = "0"
+       	document.body.style.backgroundColor = "dark blue"
+       })
+
+       var clickCounter = 0
+
+       heart.addEventListener("click", function(){
+       	heart.innerText = "thank you adia! press twice times"
+        clickCounter = clickCounter +1; 
+
+        if (clickCounter==1){
+          pic1.style.opacity = 1;
+
+        }
+
+        if (clickCounter==2){
+          pic2.style.opacity = 1;
+
+        }
+        if (clickCounter==3){
+          pic3.style.opacity = 1;
+
+        }
+        if (clickCounter==4){
+          pic4.style.opacity = 1;
+
+        }
+        if (clickCounter==5){
+          pic5.style.opacity = 1;
+
+        }
+        if (clickCounter==6){
+          pic6.style.opacity = 1;
+
+        }
+
+       })
+
+    </script>
+  </body>
+</html>

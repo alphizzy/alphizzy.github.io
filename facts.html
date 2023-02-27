@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style>
+		#trophy{
+			width: 250px;
+			height:250px;
+			background-image: url(https://resources.premierleague.com/premierleague/photo/2022/08/12/5c6a8065-6e33-4abb-801e-fcd02b146d00/Premier-League-Cup-Trophy-Man-City-ribbons.jpg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			top:600px;
+			left: 1200px;
+			position: absolute;
+
+		}
+
+
+		#buggy{
+			width:150px;
+			height:150px;
+			background-image: url(https://turkau.com/en/wp-content/uploads/2022/09/Manchester-United-Logo-Coloring-Page.jpg);
+			background-size: contain;
+			left:50px;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="buggy"></div>
+	<div id="trophy"> </div>
+
+	<script type="text/javascript">
+		buggy.style.left = "0px";
+
+		 var x = parseInt(buggy.style.left);
+
+		document.addEventListener("keydown", 
+			function(event){
+			console.log(x)
+			x = x+10;
+			buggy.style.left = x +"px";
+
+		})
+
+
+	</script>
+
+</body>
+</html>
