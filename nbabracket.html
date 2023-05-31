@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nba team ranking!!</title>
+  <style>
+    body {
+      background-image: url("finalprojectbracket.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .image {
+      position: absolute;
+      cursor: move;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <script>
+    function dragElement(element) {
+      let pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      element.onmousedown = dragMouseDown;
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        element.style.top = element.offsetTop - pos2 + "px";
+        element.style.left = element.offsetLeft - pos1 + "px";
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  </script>
+</head>
+  <div class="container">
+    <img src="bucks.jpg" class="image" id="bucks" alt="bucks">
+    <img src="grizzlies.jpg" class="image" id="grizzlies" alt="grizzlies">
+    <img src="heat.jpg" class="image" id="heat" alt="heat">
+    <img src="lakers.jpg" class="image" id="lakers" alt="lakers">
+    <img src="knicks.jpg" class="image" id="knicks" alt="knicks">
+    <img src="clippers.jpg" class="image" id="clippers" alt="clippers">
+    <img src="suns.jpg" class="image" id="suns" alt="suns">
+    <img src="timberwolves.jpg" class="image" id="timberwolves" alt="timberwolves">
+    
+  </div>
+  
+  <script>
+    // Make the images draggable
+    const images = document.getElementsByClassName("image");
+    for (let i = 0; i < images.length; i++) {
+      dragElement(images[i]);
+    }
+  </script>
+</body>
+</html>

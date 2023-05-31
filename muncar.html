@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+		
+		#trophy{
+			width: 200px;
+			height: 200px;
+			background-image: url(trophy.png);
+			background-size: contain;
+			bottom: 10px;
+			position: absolute;
+			right: 10px;
+		}
+
+		#mun{
+			width:145px;
+			height:14x5px;
+			background-image:url(mun.png);
+			background-size: contain;
+			left:10px;
+			position:absolute;
+			transition: 0.5s;
+			
+		}
+		#obstacle1{
+			width: 150px;
+			height: 150px;
+			background-image: url(liverpool2.png);
+			background-size: contain;
+			bottom: 200px;
+			position: absolute;a
+			right: 300px;
+
+}
+
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="mun"></div>
+	<div id="trophy"></div>
+	<div id="obstacle1"></div>
+
+	<script type="text/javascript">
+		mun.style.left = "0px";
+
+		 var x = parseInt(mun.style.left);
+		 var y = 0;
+		 var y = 0;
+
+		document.addEventListener("keydown", function(event){
+			
+			if(event.keyCode == 39)
+			{
+			x = x+30;
+			console.log(x)
+			mun.style.left = x +"px";
+			}
+
+		if(event.keyCode == 38)
+			{y=y-30;
+			 mun.style.top = y +"px";
+			console.log(y)
+			}
+			
+			if(event.keyCode == 40)
+			{y=y+30;
+			 mun.style.top = y +"px";
+			console.log(y)
+			}
+
+		})
+
+
+	</script>
+
+</body>
+</html>

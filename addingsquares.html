@@ -1,21 +1,29 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Add Cubes on Click</title>
     <style>
-      .square {
-        width: 100px;
-        height: 100px;
-        background-color: black;
+      .cube {
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        border: 1px solid white;
+        margin: 10px;
         display: inline-block;
       }
     </style>
   </head>
-  <body onclick="addSquare()">
+  <body>
+    <p>Click the screen to add a cube</p>
     <script>
-      function addSquare() {
-        var square = document.createElement("div");
-        square.className = "square";
-        document.body.appendChild(square);
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function() {
+          var cube = document.createElement('div');
+          cube.classList.add('cube');
+          document.body.appendChild(cube);
+        });
+      });
     </script>
   </body>
 </html>
