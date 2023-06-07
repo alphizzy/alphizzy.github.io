@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Movement</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #car {
+      position: absolute;
+      top: 300px;
+      left: 200px;
+      width: 200px;
+      height: 50px;
+      background-image: url(https://target.scene7.com/is/image/Target/GUEST_99a86268-d825-4395-9f95-c6febde71241);
+      background-size: contain;
+      background-position: absolute;
+      padding-top: 150px;
+        position: relative;
+    }
+
+    #background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://soccerprime.com/wp-content/uploads/2020/08/soccer-field.jpg');
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="car"></div>
+
+  <script>
+    var car = document.getElementById("car");
+    var leftArrow = false;
+    var rightArrow = false;
+    var topArrow = false;
+    var bottomArrow = false;
+
+    document.addEventListener("keydown", function(event) {
+      switch (event.keyCode) {
+        case 37: // Left arrow
+          leftArrow = true;
+          break;
+        case 39: // Right arrow
+          rightArrow = true;
+          break;
+        case 38: // Up arrow
+          topArrow = true;
+          break;
+        case 40: // Down arrow
+          bottomArrow = true;
+          break;
+      }
+    });
+
+    document.addEventListener("keyup", function(event) {
+      switch (event.keyCode) {
+        case 37: // Left arrow
+          leftArrow = false;
+          break;
+        case 39: // Right arrow
+          rightArrow = false;
+          break;
+        case 38: // Up arrow
+          topArrow = false;
+          break;
+        case 40: // Down arrow
+          bottomArrow = false;
+          break;
+      }
+    });
+
+    function moveCar() {
+      var carPosition = car.getBoundingClientRect();
+      var carX = carPosition.left;
+      var carY = carPosition.top;
+
+      if (leftArrow) {
+        carX -= 5;
+      }
+      if (rightArrow) {
+        carX += 5;
+      }
+      if (topArrow) {
+        carY -= 5;
+      }
+      if (bottomArrow) {
+        carY += 5;
+      }
+
+      car.style.left = carX + "px";
+      car.style.top = carY + "px";
+
+      requestAnimationFrame(moveCar);
+    }
+
+    moveCar();
+  </script>
+</body>
+</html>
